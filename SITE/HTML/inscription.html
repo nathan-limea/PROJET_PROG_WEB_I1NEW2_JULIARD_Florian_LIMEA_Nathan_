@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>S'inscrire à un Tournoi - ESPORT TOURNAMENTS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <p>🎮 Plateforme n°1 de compétitions Gaming</p>
+        <h1>ESPORT TOURNAMENTS</h1>
+        
+        <nav>
+            <a href="index.html">ACCUEIL</a> | 
+            <a href="tournois.html">TOURNOIS</a> | 
+            <a href="a-propos.html">À PROPOS</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <section>
+            <h2>📝 Inscription au Tournoi</h2>
+            <p><strong>Tournoi sélectionné :</strong> VALORANT - Night Arena #12</p>
+
+            <form action="#" method="POST">
+                <!-- Identification du Capitaine / Joueur -->
+                <fieldset>
+                    <legend>Informations du Capitaine / Joueur Solo</legend>
+
+                    <p>
+                        <label for="nom-joueur">Nom & Prénom :</label><br>
+                        <input type="text" id="nom-joueur" name="nom_joueur" placeholder="ex: Jean Dupont" required>
+                    </p>
+
+                    <p>
+                        <label for="pseudo">Pseudo In-Game (Riot ID / Epic Games) :</label><br>
+                        <input type="text" id="pseudo" name="pseudo" placeholder="ex: Shadow#1234" required>
+                    </p>
+
+                    <p>
+                        <label for="email">Adresse E-mail :</label><br>
+                        <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
+                    </p>
+
+                    <p>
+                        <label for="discord">Pseudo Discord :</label><br>
+                        <input type="text" id="discord" name="discord" placeholder="ex: pseudo_discord" required>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <!-- Informations de l'Équipe -->
+                <fieldset>
+                    <legend>Informations de l'Équipe</legend>
+
+                    <p>
+                        <label for="nom-equipe">Nom de l'Équipe :</label><br>
+                        <input type="text" id="nom-equipe" name="nom_equipe" placeholder="ex: CyberDragons">
+                    </p>
+
+                    <p>
+                        <label for="composition">Pseudos des coéquipiers (si tournoi en équipe) :</label><br>
+                        <textarea id="composition" name="composition" rows="4" cols="50" placeholder="Joueur 2 : Pseudo&#10;Joueur 3 : Pseudo&#10;Joueur 4 : Pseudo&#10;Joueur 5 : Pseudo"></textarea>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <!-- Validation et Conditions -->
+                <fieldset>
+                    <legend>Confirmation</legend>
+
+                    <p>
+                        <input type="checkbox" id="reglement-check" name="reglement_check" required>
+                        <label for="reglement-check">J'ai lu et j'accepte le règlement du tournoi.</label>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="age-check" name="age_check" required>
+                        <label for="age-check">Je certifie avoir l'âge requis pour participer.</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <button type="submit">Valider mon inscription</button>
+            </form>
+        </section>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Esport Tournaments. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

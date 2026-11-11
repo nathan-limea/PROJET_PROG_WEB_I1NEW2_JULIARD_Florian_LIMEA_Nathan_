@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tournois</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../HTML/Acceuil.html">ACCEUIL</a>
+            <a href="../HTML/jeux.html">JEUX</a>
+            <a href="../HTML/Tournois.html">TOURNOIS</a>
+            <a href="../HTML/A_propos.html"> A PROPOS</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <section>
+            <h2>Catalogue des Tournois</h2>
+            <p>Recherchez, inscrivez-vous ou consultez l'historique de nos compétitions.</p>
+            
+            <form>
+                <label for="search">Rechercher un jeu :</label>
+                <input type="text" id="search" placeholder="ex: League of Legends, Valorant...">
+                
+                <label for="plateforme">Plateforme :</label>
+                <select id="plateforme">
+                    <option value="toutes">Toutes</option>
+                    <option value="pc">PC</option>
+                    <option value="console">Console</option>
+                </select>
+                
+                <button type="submit">Filtrer</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="en-cours">
+            <h2>🔴 Tournois en cours (En Direct)</h2>
+            <p>Les matchs se jouent actuellement ! Suivez les streams et les scores en temps réel.</p>
+
+            <div class="tournoi-card">
+                <h3>Rocket League - Winter Championship</h3>
+                <p><strong>Statut :</strong> Quart de finale en cours ⚔️</p>
+                <p><strong>Format :</strong> 3v3 | 16 Équipes</p>
+                <p><strong>Cashprize :</strong> 750 €</p>
+                <p><strong>Stream en direct :</strong> <a href="#">Regarder sur Twitch</a></p>
+                <button type="button">Voir l'arbre de tournoi</button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="a-venir">
+            <h2>📅 Tournois à venir (Inscriptions ouvertes)</h2>
+
+            <div class="tournoi-card">
+                <h3>VALORANT - Night Arena #12</h3>
+                <p><strong>Date & Heure :</strong> Samedi 21 Novembre à 20h00</p>
+                <p><strong>Format :</strong> 5v5 (Élimination directe)</p>
+                <p><strong>Places restantes :</strong> 22 / 32 équipes</p>
+                <p><strong>Cashprize :</strong> 1 000 €</p>
+                <p><strong>Règlement rapide :</strong> Map pool officiel, anticheat obligatoire.</p>
+                <button type="button">S'inscrire (Équipe)</button>
+            </div>
+
+            <br>
+
+            <div class="tournoi-card">
+                <h3>League of Legends - Solo Queue Masters</h3>
+                <p><strong>Date & Heure :</strong> Dimanche 22 Novembre à 14h00</p>
+                <p><strong>Format :</strong> 1v1 (Howling Abyss)</p>
+                <p><strong>Places restantes :</strong> 48 / 64 joueurs</p>
+                <p><strong>Récompenses :</strong> 300 € + Skins exclusifs</p>
+                <button type="button">S'inscrire (Solo)</button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="historique">
+            <h2>🏆 Historique & Anciens Tournois</h2>
+
+            <div class="tournoi-card">
+                <h3>Counter-Strike 2 - Autumn Clash</h3>
+                <p><strong>Date :</strong> 5 Novembre 2026</p>
+                <p><strong>Vainqueur :</strong> 🥇 Équipe <em>CyberDragons</em> (500 €)</p>
+                <p><strong>Deuxième :</strong> 🥈 Équipe <em>Phoenix Esport</em> (200 €)</p>
+                <p><strong>MVP du Tournoi :</strong> PlayerOne (KDA: 2.4)</p>
+                <button type="button">Voir les résultats complets</button>
+                <button type="button">Revoir le Replay (VOD)</button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>💡 Une idée de compétition ?</h2>
+            <p>Vous êtes une communauté ou un créateur de contenu ? Proposez votre propre format et nous vous aidons à l'organiser !</p>
+            <button type="button">Proposer un tournoi</button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>⭐ Joueur du Mois</h2>
+            <p><strong>Pseudo :</strong> ShadowKilla</p>
+            <p><strong>Victoires :</strong> 3 tournois remportés ce mois-ci sur VALORANT !</p>
+            <p><strong>Bio :</strong> Joueur de la structure Apex Gaming. "Toujours viser le headshot."</p>
+        </section>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Esport Tournaments. Tous droits réservés.</p>
+        <nav>
+            <a href="">Politique de confidentialité</a> | 
+            <a href="">Règlement général</a>
+        </nav>
+    </footer>
+</body>
+</html>

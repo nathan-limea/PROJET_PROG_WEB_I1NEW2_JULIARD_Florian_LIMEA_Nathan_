@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer un Tournoi - ESPORT TOURNAMENTS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <p>🎮 Plateforme n°1 de compétitions Gaming</p>
+        <h1>ESPORT TOURNAMENTS</h1>
+        
+        <nav>
+            <a href="index.html">ACCUEIL</a> | 
+            <a href="tournois.html">TOURNOIS</a> | 
+            <a href="creer-tournoi.html"><strong>CRÉER UN TOURNOI</strong></a> | 
+            <a href="a-propos.html">À PROPOS</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <section>
+            <h2>🏆 Organiser un nouveau tournoi</h2>
+            <p>Remplissez les informations ci-dessous pour publier votre compétition sur la plateforme.</p>
+
+            <form action="#" method="POST">
+                <!-- Informations Générales -->
+                <fieldset>
+                    <legend>Informations Principales</legend>
+
+                    <p>
+                        <label for="nom-tournoi">Nom du tournoi :</label><br>
+                        <input type="text" id="nom-tournoi" name="nom_tournoi" placeholder="ex: VALORANT Spring Cup #1" required>
+                    </p>
+
+                    <p>
+                        <label for="jeu">Jeu concerné :</label><br>
+                        <select id="jeu" name="jeu" required>
+                            <option value="">-- Sélectionnez un jeu --</option>
+                            <option value="valorant">VALORANT</option>
+                            <option value="lol">League of Legends</option>
+                            <option value="rocket-league">Rocket League</option>
+                            <option value="cs2">Counter-Strike 2</option>
+                            <option value="fc24">EA Sports FC 24</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="plateforme">Plateforme :</label><br>
+                        <select id="plateforme" name="plateforme">
+                            <option value="pc">PC</option>
+                            <option value="console">Console (PS5 / Xbox)</option>
+                            <option value="crossplay">Crossplay</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <!-- Format et Date -->
+                <fieldset>
+                    <legend>Format & Planning</legend>
+
+                    <p>
+                        <label for="format">Format du tournoi :</label><br>
+                        <select id="format" name="format">
+                            <option value="1v1">Solo (1v1)</option>
+                            <option value="3v3">Équipe (3v3)</option>
+                            <option value="5v5">Équipe (5v5)</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="max-equipes">Nombre maximum d'inscrits :</label><br>
+                        <input type="number" id="max-equipes" name="max_equipes" min="4" max="128" value="16">
+                    </p>
+
+                    <p>
+                        <label for="date-debut">Date et heure du début :</label><br>
+                        <input type="datetime-local" id="date-debut" name="date_debut" required>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <!-- Récompenses et Règlement -->
+                <fieldset>
+                    <legend>Récompenses & Consignes</legend>
+
+                    <p>
+                        <label for="cashprize">Cashprize / Gain (€) :</label><br>
+                        <input type="number" id="cashprize" name="cashprize" placeholder="ex: 500" min="0">
+                    </p>
+
+                    <p>
+                        <label for="regles">Règlement du tournoi :</label><br>
+                        <textarea id="regles" name="regles" rows="5" cols="50" placeholder="Indiquez les règles principales, la carte du match, etc."></textarea>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <button type="submit">Publier le tournoi</button>
+            </form>
+        </section>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Esport Tournaments. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
