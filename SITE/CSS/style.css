@@ -8,6 +8,7 @@
     --text-muted: #9ca3af;
 }
 
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-dark);
@@ -19,9 +20,79 @@ body {
 
 /* --- 2. EN-TÊTE & NAVIGATION --- */
 header {
+    background: linear-gradient(rgba(15, 16, 21, 0.65), rgba(15, 16, 21, 0.65)), 
+                url("../img/F2E45229-3F98-4DA0-BCDB-DC12550F908D.PNG") no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     text-align: center;
-    padding: 20px 0;
-    background: linear-gradient(180deg, #181a20 0%, var(--bg-dark) 100%);
+    padding: 150px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Contour fin et discret */
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+header h1 {
+    margin: 15px 0;
+}
+
+header p {
+    margin-bottom: 20px;
+}
+
+/* Le "Bienvenue sur" (petit, discret et en majuscules) */
+header p:first-of-type {
+    color: #00e676; /* Vert néon Esport */
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 8px rgba(0, 230, 118, 0.4);
+}
+
+/* La phrase d'accroche (italique stylisée avec lueur rouge) */
+header p:nth-of-type(2) {
+    color: #e5e7eb;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(255, 70, 85, 0.3);
+}
+
+/* --- STYLES DU LOGO EN TEXTE --- */
+.logo-link {
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.logo-e {
+    color: #ff4655; /* Rouge néon Esport */
+    font-size: 3.2rem;
+    font-weight: 900;
+    font-style: italic;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+.logo-text {
+    color: #ffffff; /* Blanc */
+    font-size: 2.4rem;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+.logo-sub {
+    display: block;
+    color: #9ca3af;
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    margin-top: -10px;
+    text-align: center;
 }
 
 h1 {
@@ -120,4 +191,14 @@ footer {
     color: var(--text-muted);
     font-size: 0.9rem;
     padding: 20px 0;
+    background: linear-gradient(rgba(15, 16, 21, 0.8), rgba(15, 16, 21, 0.95)), 
+                url("../img/Gemini_Generated_Image_pxxy5upxxy5upxxy.jpg") no-repeat center center/cover;
+    
+    padding: 60px 20px;
+    text-align: center;
+    color: #9ca3af; /* Texte grisé discret par-dessus */
+    
+    /* Ombre blanche ou de couleur tout autour pour rappeler le header */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.5);
 }

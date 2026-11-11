@@ -8,9 +8,8 @@
 <body>
     <header>
         <nav>
-            <a href="../HTML/Acceuil.html">ACCEUIL</a>
-            <a href="../HTML/jeux.html">JEUX</a>
-            <a href="../HTML/Tournois.html">TOURNOIS</a>
+            <a href="../HTML/Acceuil.html">ACCEUIL</a> |
+            <a href="../HTML/Tournois.html">TOURNOIS</a> |
             <a href="../HTML/A_propos.html"> A PROPOS</a>
         </nav>
     </header>
@@ -18,23 +17,15 @@
     <hr>
 
     <main>
-        <section>
-            <h2>Catalogue des Tournois</h2>
-            <p>Recherchez, inscrivez-vous ou consultez l'historique de nos compétitions.</p>
-            
-            <form>
-                <label for="search">Rechercher un jeu :</label>
-                <input type="text" id="search" placeholder="ex: League of Legends, Valorant...">
-                
-                <label for="plateforme">Plateforme :</label>
-                <select id="plateforme">
-                    <option value="toutes">Toutes</option>
-                    <option value="pc">PC</option>
-                    <option value="console">Console</option>
-                </select>
-                
-                <button type="submit">Filtrer</button>
-            </form>
+
+        <section class="tournaments-hero">
+            <h2>Compétitions & E-Sport</h2>
+            <p>Retrouvez l'intégralité des compétitions filtrables par type de jeu (FPS, MOBA, Battle Royale...) et par statut.</p>
+        
+            <!-- BOUTON QUI REVENVOIE VERS LA PAGE JEUX -->
+            <a href="../HTML/Jeux.html" class="btn-hero-games">
+                🎮 Voir tous les tournois par jeu & statut
+            </a>
         </section>
 
         <hr>
@@ -101,7 +92,9 @@
         <section>
             <h2>💡 Une idée de compétition ?</h2>
             <p>Vous êtes une communauté ou un créateur de contenu ? Proposez votre propre format et nous vous aidons à l'organiser !</p>
-            <button type="button">Proposer un tournoi</button>
+            <a href="../HTML/creer_tournois.html">
+                <button type="button">Proposer un tournoi</button>
+            </a>
         </section>
 
         <hr>
@@ -117,10 +110,10 @@
     <hr>
 
     <footer>
-        <p>&copy; 2026 Esport Tournaments. Tous droits réservés.</p>
+        <p>&copy; 2026 Esport Tournaments. Tous droits réservés.</p><br><br><br>
         <nav>
-            <a href="">Politique de confidentialité</a> | 
-            <a href="">Règlement général</a>
+            <a href="#confidentialite">Politique de confidentialité</a> | 
+            <a href="#reglement">Règlement général</a>
         </nav>
     </footer>
 </body>

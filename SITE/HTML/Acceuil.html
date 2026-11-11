@@ -5,18 +5,24 @@
     <title>Acceuil</title>
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
-<body>
-    <header>
-        <p>Bienvenue sur</p>
-        <h1>ETOURNAMENT</h1><br>
-        <p>« Rassemblez vos équipes, révélez les champions. »</p>
-        <nav>
-            <a href="../HTML/Acceuil.html">ACCEUIL</a>
-            <a href="../HTML/jeux.html">JEUX</a>
-            <a href="../HTML/Tournois.html">TOURNOIS</a>
-            <a href="../HTML/A_propos.html"> A PROPOS</a>
-        </nav>
-    </header>
+    <body>
+        <header>
+            <p>Bienvenue sur</p>
+    
+            <!-- Logo 100% code et gratuit -->
+            <a href="Acceuil.html" class="logo-link">
+                <span class="logo-e">E</span><span class="logo-text">TOURNAMENT</span>
+                <span class="logo-sub">ESPORTS TOURNAMENTS</span>
+            </a>
+    
+            <p>« Rassemblez vos équipes, révélez les champions. »</p>
+    
+            <nav>
+                <a href="Acceuil.html">ACCUEIL</a> | 
+                <a href="tournois.html">TOURNOIS</a> | 
+                <a href="a-propos.html">À PROPOS</a>
+            </nav>
+        </header>
 
     <hr>
 
@@ -24,9 +30,12 @@
         <section id="accueil">
             <h2>Révélez le champion qui est en vous</h2>
             <p>Rejoignez des centaines de joueurs, affrontez les meilleures équipes et remportez des cashprizes.</p>
-            
-            <button type="button">Créer un tournoi</button>
-            <button type="button">Rejoindre une compétition</button>
+            <a href="../HTML/creer_tournois.html">
+                <button type="button">Créer un tournoi</button>
+            </a>
+            <a href="../HTML/Tournois.html">
+                <button type="button">Rejoindre une compétition</button>
+            </a>
         </section>
 
         <hr>
@@ -39,7 +48,9 @@
                 <p>Format : 5v5 | 16/32 équipes inscrites</p>
                 <p>Date : Samedi 15 Novembre à 20h00</p>
                 <p>Cashprize : 500 €</p>
-                <button type="button">S'inscrire</button>
+                <a href="../HTML/inscription.html">
+                    <button type="button">S'inscrire</button>
+                </a>
             </div>
 
             <br>
@@ -49,7 +60,9 @@
                 <p>Format : 5v5 | 28/32 équipes inscrites</p>
                 <p>Date : Dimanche 16 Novembre à 18h00</p>
                 <p>Cashprize : 1 000 €</p>
-                <button type="button">S'inscrire</button>
+                <a href="../HTML/inscription.html">
+                    <button type="button">S'inscrire</button>
+                </a>
             </div>
         </section>
 
@@ -80,7 +93,7 @@
     <hr>
 
     <footer>
-        <p>&copy; 2026 Esport Tournaments. Tous droits réservés.</p>
+        <p>&copy; 2026 Esport Tournaments. Tous droits réservés.</p><br><br><br>
         <nav>
             <a href="#confidentialite">Politique de confidentialité</a> | 
             <a href="#reglement">Règlement général</a>
