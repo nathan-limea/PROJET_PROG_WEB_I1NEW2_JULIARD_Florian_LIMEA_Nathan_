@@ -156,6 +156,51 @@ hr {
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
+/* Structure Flexbox de la carte pour coller les boutons en bas */
+.tournoi-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Conteneur des boutons en bas de carte */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    gap: 0.5rem;
+}
+
+/* On retire l'ancien margin-top des boutons puisqu'il est géré par .card-actions */
+.card-actions .btn-primary,
+.card-actions .btn-secondary {
+    margin-top: 0;
+}
+
+/* Style du bouton Détail (en bas à droite) */
+.btn-detail {
+    display: inline-block;
+    background-color: rgba(0, 230, 118, 0.1);
+    color: var(--accent-green, #00e676);
+    border: 1px solid var(--accent-green, #00e676);
+    padding: 0.5rem 0.9rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    margin-left: auto; /* Force l'alignement tout à droite */
+}
+
+.btn-detail:hover {
+    background-color: var(--accent-green, #00e676);
+    color: #000000;
+    box-shadow: 0 0 12px rgba(0, 230, 118, 0.4);
+}
+
 .tournoi-card:hover {
     transform: translateY(-4px);
     border-color: var(--accent-green);
