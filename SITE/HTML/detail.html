@@ -190,7 +190,6 @@
                     <div class="match final-match"><span class="team">CyberDragons vs Phoenix</span><span class="score">2 - 1 🏆</span></div>
                 </div>
             </div>
-            <!-- Pas de bouton inscription car passé -->
         </article>
 
         <!-- FPS 5 : Passé -->
@@ -652,6 +651,24 @@
             <a href="#">Politique de confidentialité</a> | <a href="#">Conditions générales</a>
         </nav>
     </footer>
+
+    <script>
+        // 1. On récupère le paramètre ?id=... dans l'URL
+        const params = new URLSearchParams(window.location.search);
+        const tournoiId = params.get('id');
+
+        // 2. Si un ID est présent, on cache toutes les fiches sauf celle choisie
+        if (tournoiId) {
+            const toutesLesFiches = document.querySelectorAll('.tournoi-detail-box');
+            toutesLesFiches.forEach(fiche => {
+                if (fiche.id === tournoiId) {
+                    fiche.style.display = 'block';
+                } else {
+                    fiche.style.display = 'none';
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
