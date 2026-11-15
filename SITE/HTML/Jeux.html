@@ -6,6 +6,7 @@
     <title>ETOURNAMENT - Liste des Tournois</title>
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
 
     <!-- EN-TÊTE -->
@@ -26,75 +27,97 @@
         </nav>
     </header>
 
-
     <main>
-
-        <section>
+        <section class="search-section">
             <h2>Catalogue des Tournois</h2>
             <p>Recherchez, inscrivez-vous ou consultez l'historique de nos compétitions.</p>
             
-            <form>
-                <label for="search">Rechercher un jeu :</label>
-                <input type="text" id="search" placeholder="ex: League of Legends, Valorant...">
-                
-                <label for="plateforme">Plateforme :</label>
-                <select id="plateforme">
-                    <option value="toutes">Toutes</option>
-                    <option value="pc">PC</option>
-                    <option value="console">Console</option>
-                </select>
-                
-                <button type="submit">Filtrer</button>
+            <form class="filter-form">
+                <!-- 1. Recherche libre par nom de jeu -->
+                <div class="form-group">
+                    <label for="search">Rechercher un jeu :</label>
+                    <input type="text" id="search" placeholder="ex: League of Legends, Valorant...">
+                </div>
+
+                <!-- 2. Choix du Type de jeu (Catégorie) -->
+                <div class="form-group">
+                    <label for="type-jeu">Type de jeu :</label>
+                    <select id="type-jeu">
+                        <option value="tous">Tous les types</option>
+                        <option value="fps">FPS</option>
+                        <option value="br">Battle Royale</option>
+                        <option value="moba">MOBA</option>
+                        <option value="vs">VS Fighting</option>
+                        <option value="rts">RTS</option>
+                    </select>
+                </div>
+
+                <!-- 3. Choix du Jeu spécifique -->
+                <div class="form-group">
+                    <label for="choix-jeu">Jeu :</label>
+                    <select id="choix-jeu">
+                        <option value="tous">Tous les jeux</option>
+                        <optgroup label="FPS">
+                            <option value="valorant">Valorant</option>
+                            <option value="cs2">Counter-Strike 2</option>
+                            <option value="ow2">Overwatch 2</option>
+                            <option value="r6">Rainbow Six Siege</option>
+                        </optgroup>
+                        <optgroup label="Battle Royale">
+                            <option value="apex">Apex Legends</option>
+                            <option value="fortnite">Fortnite</option>
+                            <option value="pubg">PUBG</option>
+                            <option value="warzone">Warzone</option>
+                        </optgroup>
+                        <optgroup label="MOBA">
+                            <option value="lol">League of Legends</option>
+                            <option value="dota2">Dota 2</option>
+                            <option value="smite2">Smite 2</option>
+                        </optgroup>
+                        <optgroup label="VS Fighting">
+                            <option value="sf6">Street Fighter 6</option>
+                            <option value="tekken8">Tekken 8</option>
+                            <option value="smash">Super Smash Bros Ultimate</option>
+                            <option value="dbfz">Dragon Ball FighterZ</option>
+                            <option value="ggst">Guilty Gear Strive</option>
+                        </optgroup>
+                        <optgroup label="RTS">
+                            <option value="sc2">StarCraft II</option>
+                            <option value="aoe4">Age of Empires IV</option>
+                            <option value="wc3">Warcraft III Reforged</option>
+                            <option value="stormgate">Stormgate</option>
+                            <option value="aoe2">Age of Empires II DE</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- 4. Choix du Statut (Passés, Actuels, À venir) -->
+                <div class="form-group">
+                    <label for="statut-tournoi">Statut :</label>
+                    <select id="statut-tournoi">
+                        <option value="tous">Tous les statuts</option>
+                        <option value="encours">Jeux actuels (En cours)</option>
+                        <option value="avenir">Jeux à venir</option>
+                        <option value="passe">Jeux passés (Terminés)</option>
+                    </select>
+                </div>
+
+                <!-- Bouton de validation -->
+                <div class="form-group form-submit">
+                    <button type="button" id="btn-filtrer" class="btn-primary">Filtrer</button>
+                </div>
             </form>
         </section>
-
 
         <section class="tournaments-section">
             <h2>Liste des Tournois</h2>
             <p>Filtrez par catégorie de jeu et statut de compétition pour trouver votre prochain défi.</p>
 
-            <!-- BOUTONS RADIO MASQUÉS POUR LES JEUX -->
-            <input type="radio" name="game-filter" id="game-all" checked hidden>
-            <input type="radio" name="game-filter" id="game-fps" hidden>
-            <input type="radio" name="game-filter" id="game-br" hidden>
-            <input type="radio" name="game-filter" id="game-moba" hidden>
-            <input type="radio" name="game-filter" id="game-vs" hidden>
-            <input type="radio" name="game-filter" id="game-rts" hidden>
-
-            <!-- BOUTONS RADIO MASQUÉS POUR LE STATUT -->
-            <input type="radio" name="status-filter" id="status-all" checked hidden>
-            <input type="radio" name="status-filter" id="status-avenir" hidden>
-            <input type="radio" name="status-filter" id="status-encours" hidden>
-            <input type="radio" name="status-filter" id="status-passe" hidden>
-
-            <!-- BOUTONS DE FILTRE D'AFFICHAGE -->
-            <div class="filter-group">
-                <h3>Catégories de Jeux :</h3>
-                <div class="filter-buttons">
-                    <label for="game-all" class="filter-btn btn-game-all">Tous</label>
-                    <label for="game-fps" class="filter-btn btn-game-fps">FPS</label>
-                    <label for="game-br" class="filter-btn btn-game-br">Battle Royale</label>
-                    <label for="game-moba" class="filter-btn btn-game-moba">MOBA</label>
-                    <label for="game-vs" class="filter-btn btn-game-vs">VS Fighting</label>
-                    <label for="game-rts" class="filter-btn btn-game-rts">RTS</label>
-                </div>
-            </div>
-
-            <div class="filter-group">
-                <h3>Statut du Tournoi :</h3>
-                <div class="filter-buttons">
-                    <label for="status-all" class="filter-btn btn-status-all">Tous</label>
-                    <label for="status-avenir" class="filter-btn btn-status-avenir">À Venir</label>
-                    <label for="status-encours" class="filter-btn btn-status-encours">En Cours</label>
-                    <label for="status-passe" class="filter-btn btn-status-passe">Passés</label>
-                </div>
-            </div>
-
             <!-- GRILLE DE CARTES -->
             <div class="tournois-grid">
 
                 <!-- ==================== 1. FPS ==================== -->
-                <div class="tournoi-card cat-fps status-avenir">
+                <div class="tournoi-card cat-fps jeu-valorant status-avenir">
                     <span class="badge badge-avenir">À Venir</span>
                     <h3>Valorant - Red Bull Campus Clutch</h3>
                     <p><strong>Jeu :</strong> Valorant (FPS)</p>
@@ -106,7 +129,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-fps status-encours">
+                <div class="tournoi-card cat-fps jeu-cs2 status-encours">
                     <span class="badge badge-encours">En Cours</span>
                     <h3>CS:GO 2 - Major Challenger</h3>
                     <p><strong>Jeu :</strong> Counter-Strike 2 (FPS)</p>
@@ -118,7 +141,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-fps status-avenir">
+                <div class="tournoi-card cat-fps jeu-ow2 status-avenir">
                     <span class="badge badge-avenir">À Venir</span>
                     <h3>Overwatch 2 - Open Series</h3>
                     <p><strong>Jeu :</strong> Overwatch 2 (FPS)</p>
@@ -130,7 +153,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-fps status-passe">
+                <div class="tournoi-card cat-fps jeu-valorant status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Valorant - Autumn Showdown</h3>
                     <p><strong>Jeu :</strong> Valorant (FPS)</p>
@@ -142,7 +165,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-fps status-passe">
+                <div class="tournoi-card cat-fps jeu-r6 status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Rainbow Six Siege - Cup #4</h3>
                     <p><strong>Jeu :</strong> R6 Siege (FPS)</p>
@@ -154,7 +177,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-fps status-passe">
+                <div class="tournoi-card cat-fps jeu-cs2 status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>CS:GO 2 - Summer Master</h3>
                     <p><strong>Jeu :</strong> Counter-Strike 2 (FPS)</p>
@@ -167,7 +190,7 @@
                 </div>
 
                 <!-- ==================== 2. BATTLE ROYALE ==================== -->
-                <div class="tournoi-card cat-br status-avenir">
+                <div class="tournoi-card cat-br jeu-apex status-avenir">
                     <span class="badge badge-avenir">À Venir</span>
                     <h3>Apex Legends - Predators League</h3>
                     <p><strong>Jeu :</strong> Apex Legends (BR)</p>
@@ -179,7 +202,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-br status-encours">
+                <div class="tournoi-card cat-br jeu-fortnite status-encours">
                     <span class="badge badge-encours">En Cours</span>
                     <h3>Fortnite - Champion Series FNCS</h3>
                     <p><strong>Jeu :</strong> Fortnite (BR)</p>
@@ -191,7 +214,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-br status-avenir">
+                <div class="tournoi-card cat-br jeu-pubg status-avenir">
                     <span class="badge badge-avenir">À Venir</span>
                     <h3>PUBG - Survival Cup</h3>
                     <p><strong>Jeu :</strong> PUBG (BR)</p>
@@ -203,7 +226,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-br status-passe">
+                <div class="tournoi-card cat-br jeu-fortnite status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Fortnite - Zero Build Cup</h3>
                     <p><strong>Jeu :</strong> Fortnite (BR)</p>
@@ -215,7 +238,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-br status-passe">
+                <div class="tournoi-card cat-br jeu-warzone status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Warzone - Resurgence Royale</h3>
                     <p><strong>Jeu :</strong> Warzone (BR)</p>
@@ -227,7 +250,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-br status-passe">
+                <div class="tournoi-card cat-br jeu-apex status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Apex Legends - Gauntlet</h3>
                     <p><strong>Jeu :</strong> Apex Legends (BR)</p>
@@ -240,7 +263,7 @@
                 </div>
 
                 <!-- ==================== 3. MOBA ==================== -->
-                <div class="tournoi-card cat-moba status-avenir">
+                <div class="tournoi-card cat-moba jeu-lol status-avenir">
                     <span class="badge badge-avenir">À Venir</span>
                     <h3>League of Legends - Open Cup #4</h3>
                     <p><strong>Jeu :</strong> League of Legends (MOBA)</p>
@@ -252,7 +275,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-moba status-encours">
+                <div class="tournoi-card cat-moba jeu-dota2 status-encours">
                     <span class="badge badge-encours">En Cours</span>
                     <h3>Dota 2 - International Amateur</h3>
                     <p><strong>Jeu :</strong> Dota 2 (MOBA)</p>
@@ -264,7 +287,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-moba status-avenir">
+                <div class="tournoi-card cat-moba jeu-lol status-avenir">
                     <span class="badge badge-avenir">À Venir</span>
                     <h3>League of Legends - Aram Madness</h3>
                     <p><strong>Jeu :</strong> League of Legends (MOBA)</p>
@@ -276,7 +299,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-moba status-passe">
+                <div class="tournoi-card cat-moba jeu-lol status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>League of Legends - Baron Clash</h3>
                     <p><strong>Jeu :</strong> League of Legends (MOBA)</p>
@@ -288,7 +311,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-moba status-passe">
+                <div class="tournoi-card cat-moba jeu-smite2 status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Smite 2 - Gods Showdown</h3>
                     <p><strong>Jeu :</strong> Smite 2 (MOBA)</p>
@@ -300,7 +323,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-moba status-passe">
+                <div class="tournoi-card cat-moba jeu-dota2 status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Dota 2 - Aegis Battle</h3>
                     <p><strong>Jeu :</strong> Dota 2 (MOBA)</p>
@@ -313,7 +336,7 @@
                 </div>
 
                 <!-- ==================== 4. VS FIGHTING ==================== -->
-                <div class="tournoi-card cat-vs status-avenir">
+                <div class="tournoi-card cat-vs jeu-sf6 status-avenir">
                     <span class="badge badge-avenir">À Venir</span>
                     <h3>Street Fighter 6 - World Clash</h3>
                     <p><strong>Jeu :</strong> Street Fighter 6 (VS)</p>
@@ -325,7 +348,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-vs status-encours">
+                <div class="tournoi-card cat-vs jeu-tekken8 status-encours">
                     <span class="badge badge-encours">En Cours</span>
                     <h3>Tekken 8 - Iron Fist Tournament</h3>
                     <p><strong>Jeu :</strong> Tekken 8 (VS)</p>
@@ -337,7 +360,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-vs status-avenir">
+                <div class="tournoi-card cat-vs jeu-smash status-avenir">
                     <span class="badge badge-avenir">À Venir</span>
                     <h3>Super Smash Bros Ultimate - Open</h3>
                     <p><strong>Jeu :</strong> Smash Bros (VS)</p>
@@ -349,7 +372,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-vs status-passe">
+                <div class="tournoi-card cat-vs jeu-sf6 status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Street Fighter 6 - Hadoken Cup</h3>
                     <p><strong>Jeu :</strong> Street Fighter 6 (VS)</p>
@@ -361,7 +384,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-vs status-passe">
+                <div class="tournoi-card cat-vs jeu-dbfz status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Dragon Ball FighterZ - Final Battle</h3>
                     <p><strong>Jeu :</strong> DBFZ (VS)</p>
@@ -373,7 +396,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-vs status-passe">
+                <div class="tournoi-card cat-vs jeu-ggst status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Guilty Gear Strive - Heaven Cup</h3>
                     <p><strong>Jeu :</strong> GGST (VS)</p>
@@ -386,7 +409,7 @@
                 </div>
 
                 <!-- ==================== 5. RTS ==================== -->
-                <div class="tournoi-card cat-rts status-avenir">
+                <div class="tournoi-card cat-rts jeu-sc2 status-avenir">
                     <span class="badge badge-avenir">À Venir</span>
                     <h3>StarCraft II - Master League</h3>
                     <p><strong>Jeu :</strong> StarCraft II (RTS)</p>
@@ -398,7 +421,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-rts status-encours">
+                <div class="tournoi-card cat-rts jeu-aoe4 status-encours">
                     <span class="badge badge-encours">En Cours</span>
                     <h3>Age of Empires IV - Crown Championship</h3>
                     <p><strong>Jeu :</strong> AoE IV (RTS)</p>
@@ -410,7 +433,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-rts status-avenir">
+                <div class="tournoi-card cat-rts jeu-wc3 status-avenir">
                     <span class="badge badge-avenir">À Venir</span>
                     <h3>Warcraft III Reforged - Legends Cup</h3>
                     <p><strong>Jeu :</strong> Warcraft III (RTS)</p>
@@ -422,7 +445,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-rts status-passe">
+                <div class="tournoi-card cat-rts jeu-sc2 status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>StarCraft II - Legacy Open</h3>
                     <p><strong>Jeu :</strong> StarCraft II (RTS)</p>
@@ -434,7 +457,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-rts status-passe">
+                <div class="tournoi-card cat-rts jeu-stormgate status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Stormgate - Beta Invitational</h3>
                     <p><strong>Jeu :</strong> Stormgate (RTS)</p>
@@ -446,7 +469,7 @@
                     </div>
                 </div>
 
-                <div class="tournoi-card cat-rts status-passe">
+                <div class="tournoi-card cat-rts jeu-aoe2 status-passe">
                     <span class="badge badge-passe">Terminé</span>
                     <h3>Age of Empires II DE - King of the Hill</h3>
                     <p><strong>Jeu :</strong> AoE II DE (RTS)</p>
@@ -469,6 +492,8 @@
             <a href="#">Politique de confidentialité</a> | <a href="#">Conditions générales</a>
         </nav>
     </footer>
+    
+    <script src="../JS/script.js"></script>
 
 </body>
 </html>
