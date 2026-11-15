@@ -1,4 +1,7 @@
-// 1. On récupère les éléments du formulaire et toutes les cartes de tournois
+// ==========================================
+// 1. LOGIQUE POUR LA PAGE JEUX.HTML (FILTRES)
+// ==========================================
+// // 1. On récupère les éléments du formulaire et toutes les cartes de tournois
 const searchInput = document.getElementById('search');
 const typeSelect = document.getElementById('type-jeu');
 const jeuSelect = document.getElementById('choix-jeu');
@@ -48,3 +51,23 @@ searchInput.addEventListener('input', filtrerTournois);
 typeSelect.addEventListener('change', filtrerTournois);
 jeuSelect.addEventListener('change', filtrerTournois);
 statutSelect.addEventListener('change', filtrerTournois);
+
+// ===================================================
+// 2. LOGIQUE POUR LA PAGE DETAIL-TOURNOI.HTML
+// ===================================================
+const detailBoxes = document.querySelectorAll('.tournoi-detail-box');
+
+if (detailBoxes.length > 0) {
+    // Lit ?id=... dans l'URL (compatible Safari) ou #... en secours
+    const params = new URLSearchParams(window.location.search);
+    const tournoiId = params.get('id') || window.location.hash.replace('#', '').trim();
+    const tournoiCible = tournoiId ? document.getElementById(tournoiId) : null;
+
+    if (tournoiCible) {
+        detailBoxes.forEach(box => box.style.display = 'none');
+        tournoiCible.style.display = 'block';
+    } else {
+        // Si aucun ID n'est trouvé dans l'URL, on réaffiche tout pour ne pas laisser la page vide
+        detailBoxes.forEach(box => box.style.display = 'block');
+    }
+}
