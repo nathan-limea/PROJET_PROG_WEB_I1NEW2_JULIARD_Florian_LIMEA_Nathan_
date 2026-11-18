@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETOURNAMENT - Liste des Tournois</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <!-- EN-TÊTE -->
+    <header>
+        <p>Bienvenue sur</p>
+        
+        <a href="Acceuil.html" class="logo-link">
+            <span class="logo-e">E</span><span class="logo-text">TOURNAMENT</span>
+            <span class="logo-sub">ESPORTS TOURNAMENTS</span>
+        </a>
+        
+        <p>« Rassemblez vos équipes, révélez les champions. »</p>
+        
+        <nav>
+            <a href="Acceuil.html">ACCUEIL</a> | 
+            <a href="Tournois.html">TOURNOIS</a> | 
+            <a href="A_propos.html">À PROPOS</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h1>Catalogue des Tournois</h1>
+            <p>Recherchez, inscrivez-vous ou consultez l'historique de nos compétitions.</p>
+            
+            <form class="filter-form">
+                <!-- 1. Recherche libre par nom de jeu -->
+                <div class="form-group">
+                    <label for="search">Rechercher un jeu :</label>
+                    <input type="text" id="search" placeholder="ex: League of Legends, Valorant...">
+                </div>
+
+                <!-- 2. Choix du Type de jeu (Catégorie) -->
+                <div class="form-group">
+                    <label for="type-jeu">Type de jeu :</label>
+                    <select id="type-jeu">
+                        <option value="tous">Tous les types</option>
+                        <option value="fps">FPS</option>
+                        <option value="br">Battle Royale</option>
+                        <option value="moba">MOBA</option>
+                        <option value="vs">VS Fighting</option>
+                        <option value="rts">RTS</option>
+                    </select>
+                </div>
+
+                <!-- 3. Choix du Jeu spécifique -->
+                <div class="form-group">
+                    <label for="choix-jeu">Jeu :</label>
+                    <select id="choix-jeu">
+                        <option value="tous">Tous les jeux</option>
+                        <optgroup label="FPS">
+                            <option value="valorant">Valorant</option>
+                            <option value="cs2">Counter-Strike 2</option>
+                            <option value="ow2">Overwatch 2</option>
+                            <option value="r6">Rainbow Six Siege</option>
+                        </optgroup>
+                        <optgroup label="Battle Royale">
+                            <option value="apex">Apex Legends</option>
+                            <option value="fortnite">Fortnite</option>
+                            <option value="pubg">PUBG</option>
+                            <option value="warzone">Warzone</option>
+                        </optgroup>
+                        <optgroup label="MOBA">
+                            <option value="lol">League of Legends</option>
+                            <option value="dota2">Dota 2</option>
+                            <option value="smite2">Smite 2</option>
+                        </optgroup>
+                        <optgroup label="VS Fighting">
+                            <option value="sf6">Street Fighter 6</option>
+                            <option value="tekken8">Tekken 8</option>
+                            <option value="smash">Super Smash Bros Ultimate</option>
+                            <option value="dbfz">Dragon Ball FighterZ</option>
+                            <option value="ggst">Guilty Gear Strive</option>
+                        </optgroup>
+                        <optgroup label="RTS">
+                            <option value="sc2">StarCraft II</option>
+                            <option value="aoe4">Age of Empires IV</option>
+                            <option value="wc3">Warcraft III Reforged</option>
+                            <option value="stormgate">Stormgate</option>
+                            <option value="aoe2">Age of Empires II DE</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- 4. Choix du Statut (Passés, Actuels, À venir) -->
+                <div class="form-group">
+                    <label for="statut-tournoi">Statut :</label>
+                    <select id="statut-tournoi">
+                        <option value="tous">Tous les statuts</option>
+                        <option value="encours">Jeux actuels (En cours)</option>
+                        <option value="avenir">Jeux à venir</option>
+                        <option value="passe">Jeux passés (Terminés)</option>
+                    </select>
+                </div>
+
+                <!-- Bouton de validation -->
+                <div class="form-group form-submit">
+                    <button type="button" id="btn-filtrer" class="btn-primary">Filtrer</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="tournaments-section">
+            <h2>Liste des Tournois</h2>
+            <p>Filtrez par catégorie de jeu et statut de compétition pour trouver votre prochain défi.</p>
+
+            <!-- GRILLE DE CARTES -->
+            <div class="tournois-grid">
+
+                <!-- ==================== 1. FPS ==================== -->
+                <div class="tournoi-card cat-fps jeu-valorant status-avenir">
+                    <span class="badge badge-avenir">À Venir</span>
+                    <h3>Valorant - Red Bull Campus Clutch</h3>
+                    <p><strong>Jeu :</strong> Valorant (FPS)</p>
+                    <p><strong>Date :</strong> 25 Novembre 2026</p>
+                    <p><strong>Cashprize :</strong> 1 500 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=fps-val-campus" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-fps jeu-cs2 status-encours">
+                    <span class="badge badge-encours">En Cours</span>
+                    <h3>CS:GO 2 - Major Challenger</h3>
+                    <p><strong>Jeu :</strong> Counter-Strike 2 (FPS)</p>
+                    <p><strong>Date :</strong> En ce moment</p>
+                    <p><strong>Cashprize :</strong> 3 000 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=fps-cs2-major" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-fps jeu-ow2 status-avenir">
+                    <span class="badge badge-avenir">À Venir</span>
+                    <h3>Overwatch 2 - Open Series</h3>
+                    <p><strong>Jeu :</strong> Overwatch 2 (FPS)</p>
+                    <p><strong>Date :</strong> 10 Décembre 2026</p>
+                    <p><strong>Cashprize :</strong> 800 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=fps-ow2-open" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-fps jeu-valorant status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Valorant - Autumn Showdown</h3>
+                    <p><strong>Jeu :</strong> Valorant (FPS)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 CyberDragons</p>
+                    <p><strong>Résultats :</strong> 2 - 1 vs Phoenix Esports</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=fps-val-autumn" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-fps jeu-r6 status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Rainbow Six Siege - Cup #4</h3>
+                    <p><strong>Jeu :</strong> R6 Siege (FPS)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 Team Valkyrie</p>
+                    <p><strong>Résultats :</strong> 3 - 0 vs Breach Squad</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=fps-r6-cup" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-fps jeu-cs2 status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>CS:GO 2 - Summer Master</h3>
+                    <p><strong>Jeu :</strong> Counter-Strike 2 (FPS)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 Apex Gaming</p>
+                    <p><strong>Résultats :</strong> 16 - 12 vs NAVI Academy</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=fps-cs2-summer" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <!-- ==================== 2. BATTLE ROYALE ==================== -->
+                <div class="tournoi-card cat-br jeu-apex status-avenir">
+                    <span class="badge badge-avenir">À Venir</span>
+                    <h3>Apex Legends - Predators League</h3>
+                    <p><strong>Jeu :</strong> Apex Legends (BR)</p>
+                    <p><strong>Date :</strong> 28 Novembre 2026</p>
+                    <p><strong>Cashprize :</strong> 2 000 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=br-apex-league" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-br jeu-fortnite status-encours">
+                    <span class="badge badge-encours">En Cours</span>
+                    <h3>Fortnite - Champion Series FNCS</h3>
+                    <p><strong>Jeu :</strong> Fortnite (BR)</p>
+                    <p><strong>Date :</strong> En ce moment</p>
+                    <p><strong>Cashprize :</strong> 5 000 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=br-fortnite-fncs" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-br jeu-pubg status-avenir">
+                    <span class="badge badge-avenir">À Venir</span>
+                    <h3>PUBG - Survival Cup</h3>
+                    <p><strong>Jeu :</strong> PUBG (BR)</p>
+                    <p><strong>Date :</strong> 15 Décembre 2026</p>
+                    <p><strong>Cashprize :</strong> 1 000 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=br-pubg-cup" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-br jeu-fortnite status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Fortnite - Zero Build Cup</h3>
+                    <p><strong>Jeu :</strong> Fortnite (BR)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 Duo TaySon & Veno</p>
+                    <p><strong>Résultats :</strong> 3 Victory Royales (145 pts)</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=br-fortnite-zerobuild" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-br jeu-warzone status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Warzone - Resurgence Royale</h3>
+                    <p><strong>Jeu :</strong> Warzone (BR)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 ShadowKilla</p>
+                    <p><strong>Résultats :</strong> 28 Eliminations</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=br-warzone-royale" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-br jeu-apex status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Apex Legends - Gauntlet</h3>
+                    <p><strong>Jeu :</strong> Apex Legends (BR)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 TSM Alliance</p>
+                    <p><strong>Résultats :</strong> Match Point Game 6</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=br-apex-gauntlet" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <!-- ==================== 3. MOBA ==================== -->
+                <div class="tournoi-card cat-moba jeu-lol status-avenir">
+                    <span class="badge badge-avenir">À Venir</span>
+                    <h3>League of Legends - Open Cup #4</h3>
+                    <p><strong>Jeu :</strong> League of Legends (MOBA)</p>
+                    <p><strong>Date :</strong> 1 Décembre 2026</p>
+                    <p><strong>Cashprize :</strong> 2 500 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=moba-lol-open" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-moba jeu-dota2 status-encours">
+                    <span class="badge badge-encours">En Cours</span>
+                    <h3>Dota 2 - International Amateur</h3>
+                    <p><strong>Jeu :</strong> Dota 2 (MOBA)</p>
+                    <p><strong>Date :</strong> En ce moment</p>
+                    <p><strong>Cashprize :</strong> 4 000 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=moba-dota2-amateur" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-moba jeu-lol status-avenir">
+                    <span class="badge badge-avenir">À Venir</span>
+                    <h3>League of Legends - Aram Madness</h3>
+                    <p><strong>Jeu :</strong> League of Legends (MOBA)</p>
+                    <p><strong>Date :</strong> 20 Décembre 2026</p>
+                    <p><strong>Cashprize :</strong> 500 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=moba-lol-aram" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-moba jeu-lol status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>League of Legends - Baron Clash</h3>
+                    <p><strong>Jeu :</strong> League of Legends (MOBA)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 Karmine Corp Solo</p>
+                    <p><strong>Résultats :</strong> 3 - 2 (BO5 Finale)</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=moba-lol-baron" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-moba jeu-smite2 status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Smite 2 - Gods Showdown</h3>
+                    <p><strong>Jeu :</strong> Smite 2 (MOBA)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 Olympus Gaming</p>
+                    <p><strong>Résultats :</strong> 2 - 0 vs Titan Esports</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=moba-smite2-gods" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-moba jeu-dota2 status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Dota 2 - Aegis Battle</h3>
+                    <p><strong>Jeu :</strong> Dota 2 (MOBA)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 Secret Rivals</p>
+                    <p><strong>Résultats :</strong> 2 - 1 vs Spirit Academy</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=moba-dota2-aegis" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <!-- ==================== 4. VS FIGHTING ==================== -->
+                <div class="tournoi-card cat-vs jeu-sf6 status-avenir">
+                    <span class="badge badge-avenir">À Venir</span>
+                    <h3>Street Fighter 6 - World Clash</h3>
+                    <p><strong>Jeu :</strong> Street Fighter 6 (VS)</p>
+                    <p><strong>Date :</strong> 5 Décembre 2026</p>
+                    <p><strong>Cashprize :</strong> 1 200 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=vs-sf6-clash" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-vs jeu-tekken8 status-encours">
+                    <span class="badge badge-encours">En Cours</span>
+                    <h3>Tekken 8 - Iron Fist Tournament</h3>
+                    <p><strong>Jeu :</strong> Tekken 8 (VS)</p>
+                    <p><strong>Date :</strong> En ce moment</p>
+                    <p><strong>Cashprize :</strong> 1 500 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=vs-tekken8-iron" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-vs jeu-smash status-avenir">
+                    <span class="badge badge-avenir">À Venir</span>
+                    <h3>Super Smash Bros Ultimate - Open</h3>
+                    <p><strong>Jeu :</strong> Smash Bros (VS)</p>
+                    <p><strong>Date :</strong> 18 Décembre 2026</p>
+                    <p><strong>Cashprize :</strong> 1 000 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=vs-smash-open" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-vs jeu-sf6 status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Street Fighter 6 - Hadoken Cup</h3>
+                    <p><strong>Jeu :</strong> Street Fighter 6 (VS)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 MisterCrimson</p>
+                    <p><strong>Résultats :</strong> 3 - 1 (Ken vs Luke)</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=vs-sf6-hadoken" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-vs jeu-dbfz status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Dragon Ball FighterZ - Final Battle</h3>
+                    <p><strong>Jeu :</strong> DBFZ (VS)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 Yasha</p>
+                    <p><strong>Résultats :</strong> 3 - 0 Grand Reset</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=vs-dbfz-final" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-vs jeu-ggst status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Guilty Gear Strive - Heaven Cup</h3>
+                    <p><strong>Jeu :</strong> GGST (VS)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 SolBadguy99</p>
+                    <p><strong>Résultats :</strong> 3 - 2 vs KyKiske</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=vs-ggst-heaven" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <!-- ==================== 5. RTS ==================== -->
+                <div class="tournoi-card cat-rts jeu-sc2 status-avenir">
+                    <span class="badge badge-avenir">À Venir</span>
+                    <h3>StarCraft II - Master League</h3>
+                    <p><strong>Jeu :</strong> StarCraft II (RTS)</p>
+                    <p><strong>Date :</strong> 12 Décembre 2026</p>
+                    <p><strong>Cashprize :</strong> 1 500 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=rts-sc2-master" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-rts jeu-aoe4 status-encours">
+                    <span class="badge badge-encours">En Cours</span>
+                    <h3>Age of Empires IV - Crown Championship</h3>
+                    <p><strong>Jeu :</strong> AoE IV (RTS)</p>
+                    <p><strong>Date :</strong> En ce moment</p>
+                    <p><strong>Cashprize :</strong> 1 000 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=rts-aoe4-crown" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-rts jeu-wc3 status-avenir">
+                    <span class="badge badge-avenir">À Venir</span>
+                    <h3>Warcraft III Reforged - Legends Cup</h3>
+                    <p><strong>Jeu :</strong> Warcraft III (RTS)</p>
+                    <p><strong>Date :</strong> 22 Décembre 2026</p>
+                    <p><strong>Cashprize :</strong> 600 €</p>
+                    <div class="card-actions">
+                        <a href="inscription.html" class="btn-primary">S'inscrire</a>
+                        <a href="Detail-tournoi.html?id=rts-wc3-legends" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-rts jeu-sc2 status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>StarCraft II - Legacy Open</h3>
+                    <p><strong>Jeu :</strong> StarCraft II (RTS)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 Serral Fan</p>
+                    <p><strong>Résultats :</strong> 4 - 1 Zerg Rush</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=rts-sc2-legacy" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-rts jeu-stormgate status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Stormgate - Beta Invitational</h3>
+                    <p><strong>Jeu :</strong> Stormgate (RTS)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 MarineLorD</p>
+                    <p><strong>Résultats :</strong> 3 - 0 Sweep</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=rts-stormgate-beta" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+                <div class="tournoi-card cat-rts jeu-aoe2 status-passe">
+                    <span class="badge badge-passe">Terminé</span>
+                    <h3>Age of Empires II DE - King of the Hill</h3>
+                    <p><strong>Jeu :</strong> AoE II DE (RTS)</p>
+                    <p><strong>Vainqueur :</strong> 🏆 TheViper</p>
+                    <p><strong>Résultats :</strong> 4 - 3 Finale Épique</p>
+                    <div class="card-actions">
+                        <a href="#" class="btn-secondary">Voir le Replay (VOD)</a>
+                        <a href="Detail-tournoi.html?id=rts-aoe2-king" class="btn-detail">Détail</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer>
+        <p>&copy; 2026 Esport Tournaments. Tous droits réservés.</p>
+        <nav>
+            <a href="#">Politique de confidentialité</a> | <a href="#">Conditions générales</a>
+        </nav>
+    </footer>
+    
+    <script src="../JS/script.js"></script>
+
+</body>
+</html>
